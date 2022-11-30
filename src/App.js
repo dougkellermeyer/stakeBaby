@@ -3,22 +3,73 @@ import {useState} from 'react';
 
 function App() {
 
-  const sumbitSpecs = (e) => {
-    console.log(e);
-    e.preventDefault();
+  const [spec, setSpec] = useState({
+    cpu: "",
+    ram: "",
+    storage: "",
+    os: "",
+    serverCount: "",
+    speed: ""
+  })
 
+  const sumbitSpecs = (e) => {
+    console.log(e.target.value);
+    e.preventDefault();
   }
 
-  const [cpu, setCpu] = useState("");
-  const [ram, setRam] = useState("");
-  const [storage, setStorage] = useState("");
-  const [os, setOs] = useState("");
-  const [speed, setSpeed] = useState("");
-
-  const handleChange = (e) => {
+  //TODO make generic handler that is dynamic to setState/spec
+  const handleCpuChange = (e) => {
     console.log(e.target.value);
-    setCpu(e.target.value)
+    setSpec({
+      ...spec,
+      cpu: e.target.value,
+    })
     e.preventDefault();
+  };
+
+  const handleRamChange = (e) => {
+    console.log(e.target.value);
+    setSpec({
+      ...spec,
+      ram: e.target.value,
+    })
+    e.preventDefault();
+  };
+
+  const handleStorageChange = (e) => {
+    console.log(e.target.value);
+    setSpec({
+      ...spec,
+      storage: e.target.value,
+    })
+    e.preventDefault();
+  };
+
+  const handleOsChange = (e) => {
+    console.log(e.target.value);
+    setSpec({
+      ...spec,
+      os: e.target.value,
+    })    
+    e.preventDefault();
+  };
+
+  const handleServerCountChange = (e) => {
+    console.log(e.target.value);
+    setSpec({
+      ...spec,
+      serverCount: e.target.value,
+    })    
+    e.preventDefault();
+  };
+
+  const handleSpeedChange = (e) => {
+    console.log(e.target.value);
+    setSpec({
+      ...spec,
+      speed: e.target.value,
+    })
+        e.preventDefault();
   };
 
   return (
@@ -31,7 +82,7 @@ function App() {
         <form onSubmit={sumbitSpecs} className="spec-selectors-form">
           <div className="spec-select-child-wrapper">
             <label htmlFor="cpu-select">CPU (cores) </label>
-            <select value={cpu} onChange={handleChange} name="cpu" id="cpu-select">
+            <select value={spec.cpu} onChange={handleCpuChange} name="spec.cpu" id="cpu-select">
               <option value="2">2</option>
               <option value="4">4</option>
               <option value="6">6</option>
@@ -41,7 +92,7 @@ function App() {
           </div>
           <div className="spec-select-child-wrapper">
             <label htmlFor="ram-select">RAM </label>
-            <select name="ram" id="ram-select">
+            <select value={spec.ram} onChange={handleRamChange} name="ram" id="ram-select">
               <option value="2">2GB</option>
               <option value="4">4GB</option>
               <option value="8">8GB</option>
@@ -52,7 +103,7 @@ function App() {
           </div>
           <div className="spec-select-child-wrapper">
             <label htmlFor="storage-select">Storage </label>
-            <select name="storage" id="storage-select">
+            <select value={spec.storage} onChange={handleStorageChange} name="storage" id="storage-select">
               <option value="50">50GB</option>
               <option value="100">100GB</option>
               <option value="200">200GB</option>
@@ -63,7 +114,7 @@ function App() {
           </div>
           <div className="spec-select-child-wrapper">
             <label htmlFor="os-select">Operating System </label>
-            <select name="os" id="os-select">
+            <select value={spec.os} onChange={handleOsChange} name="os" id="os-select">
               <option value="Windows">Windows</option>
               <option value="Mac">Mac</option>
               <option value="Linux">Linux</option>
@@ -71,7 +122,7 @@ function App() {
           </div>
           <div className="spec-select-child-wrapper">
             <label htmlFor="servers-select">Number of computers/servers available </label>
-            <select name="servers" id="servers-select">
+            <select value={spec.serverCount} onChange={handleServerCountChange} name="servers" id="servers-select">
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
@@ -80,7 +131,7 @@ function App() {
           </div>
           <div className="spec-select-child-wrapper">
             <label htmlFor="internet-speed-select">Internet Speed (optional) </label>
-            <select name="speed" id="internet-speed-select">
+            <select value={spec.speed} onChange={handleSpeedChange} name="speed" id="internet-speed-select">
               <option value="10">10 MB/s</option>
               <option value="20">20 MB/s</option>
               <option value="30">50 MB/s</option>
@@ -90,7 +141,7 @@ function App() {
             </select>
           </div>
           <br/>
-          <button type="submit" value="Submit">Submit</button>
+          <input type="submit" value="Submit" />
         </form>
       </div>
     </div>
