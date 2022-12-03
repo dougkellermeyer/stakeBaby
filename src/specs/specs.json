@@ -1,0 +1,124 @@
+[
+    {
+        "id": 1,
+        "protocolName": "ethereum",
+        "cpuCores": 4,
+        "ram": 16,
+        "os": [
+            {
+                "osName": "windows",
+                "version": "any"
+            },
+            {
+                "osName": "mac",
+                "version": "any"
+            },
+            {
+                "osName": "linux",
+                "version": "any"
+            }
+        ],
+        "serverCount": 1,
+        "speed": 25,
+        "storage": 1000
+    },
+    {
+        "id": 2,
+        "protocolName": "polkadot",
+        "cpuCores": 4,
+        "ram": 16,
+        "os": [
+            {
+                "osName": "mac",
+                "version": "any"
+            },
+            {
+                "osName": "linux",
+                "version": "any"
+            }
+        ],
+        "serverCount": 1,
+        "speed": 62.5,
+        "storage": 1000
+    },
+    {
+        "id": 3,
+        "protocolName": "avalanche",
+        "cpuCores": 4,
+        "ram": 16,
+        "os": [
+            {
+                "osName": "mac",
+                "version": "12+"
+            },
+            {
+                "osName": "linux",
+                "version": "Ubuntu 20.04"
+            }
+        ],
+        "serverCount": 1,
+        "speed": 25,
+        "storage": 1000
+    },
+    {
+        "id": 4,
+        "protocolName": "near",
+        "cpuCores": 8,
+        "ram": 24,
+        "os": [
+            {
+                "osName": "windows",
+                "version": "any"
+            },
+            {
+                "osName": "mac",
+                "version": "any"
+            },
+            {
+                "osName": "linux",
+                "version": "any"
+            }
+        ],
+        "serverCount": 1,
+        "speed": "any",
+        "storage": 500
+    },
+    {
+        "id": 5,
+        "protocolName": "cosmos",
+        "cpuCores": 2,
+        "ram": 32,
+        "os": [
+            {
+                "osName": "windows",
+                "version": "any"
+            },
+            {
+                "osName": "mac",
+                "version": "any"
+            },
+            {
+                "osName": "linux",
+                "version": "any"
+            }
+        ],
+        "serverCount": 1,
+        "speed": "any",
+        "storage": 500
+    },
+    {
+        "id": 6,
+        "protocolName": "cardano",
+        "cpuCores": 2,
+        "ram": 16,
+        "os": [
+            {
+                "osName": "linux",
+                "version": "Ubuntu 20.04"
+            }
+        ],
+        "serverCount": 2,
+        "speed": "any",
+        "storage": 100
+    }
+]
