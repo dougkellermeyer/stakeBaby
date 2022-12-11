@@ -1,7 +1,9 @@
 import './App.css';
 import { useState } from 'react';
+import { matchProtocol } from './utils';
+
 function App() {
-  const specJson = require('./specs/specs.json')
+
   const [spec, setSpec] = useState({
     cpuCores: "",
     ram: "",
@@ -12,12 +14,11 @@ function App() {
   })
   const sumbitSpecs = (e) => {
     console.log(spec);
-    matchProtocol()
+    matchProtocol(spec)
     e.preventDefault();
   }
   //TODO make generic handler that is dynamic to setState/spec
   const handleCpuCoresChange = (e) => {
-    console.log(e.target.value);
     setSpec({
       ...spec,
       cpuCores: e.target.value,
@@ -25,7 +26,6 @@ function App() {
     e.preventDefault();
   };
   const handleRamChange = (e) => {
-    console.log(e.target.value);
     setSpec({
       ...spec,
       ram: e.target.value,
@@ -33,7 +33,6 @@ function App() {
     e.preventDefault();
   };
   const handleStorageChange = (e) => {
-    console.log(e.target.value);
     setSpec({
       ...spec,
       storage: e.target.value,
@@ -41,7 +40,6 @@ function App() {
     e.preventDefault();
   };
   const handleOsChange = (e) => {
-    console.log(e.target.value);
     setSpec({
       ...spec,
       os: e.target.value,
@@ -50,7 +48,6 @@ function App() {
     e.preventDefault();
   };
   const handleServerCountChange = (e) => {
-    console.log(e.target.value);
     setSpec({
       ...spec,
       serverCount: e.target.value,
@@ -58,16 +55,14 @@ function App() {
     e.preventDefault();
   };
   const handleSpeedChange = (e) => {
-    console.log(e.target.value);
     setSpec({
       ...spec,
       speed: e.target.value,
     })
     e.preventDefault();
   };
-  const matchProtocol = () => {
-    console.log(specJson)
-  }
+
+
   return (
     <div className="App">
       <header className="App-header">
@@ -75,8 +70,20 @@ function App() {
         <p>Input your computer's specs or choose a protocol to view your optimal staking setup.
         </p>
       </header>
+    {/* TODO Move form into component and control its state here*/}
       <div className="spec-selectors-wrapper">
         <form onSubmit={sumbitSpecs} className="spec-selectors-form">
+          <div className="spec-select-child-wrapper">
+            <label htmlFor="servers-select">Number of computers/servers available </label>
+            <select value={spec.serverCount} onChange={handleServerCountChange}
+              name="servers" id="servers-select">
+              <option value="">Select a value</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4+</option>
+            </select>
+          </div>
           <div className="spec-select-child-wrapper">
             <label htmlFor="cpuCores-select">CPU (cores) </label>
             <select value={spec.cpuCores} onChange={handleCpuCoresChange}
@@ -122,20 +129,9 @@ select">
             <label htmlFor="os-select">Operating System </label>
             <select value={spec.os} onChange={handleOsChange} name="os" id="os-select">
               <option value="">Select a value</option>
-              <option value="Windows">Windows</option>
-              <option value="Mac">Mac</option>
-              <option value="Linux">Linux</option>
-            </select>
-          </div>
-          <div className="spec-select-child-wrapper">
-            <label htmlFor="servers-select">Number of computers/servers available </label>
-            <select value={spec.serverCount} onChange={handleServerCountChange}
-              name="servers" id="servers-select">
-              <option value="">Select a value</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4+</option>
+              <option value="windows">Windows</option>
+              <option value="mac">Mac</option>
+              <option value="linux">Linux</option>
             </select>
           </div>
           <div className="spec-select-child-wrapper">

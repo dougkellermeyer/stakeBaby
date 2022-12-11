@@ -4,6 +4,7 @@
         "protocolName": "ethereum",
         "cpuCores": 4,
         "ram": 16,
+        "storage": 1000,
         "os": [
             {
                 "osName": "windows",
@@ -19,14 +20,14 @@
             }
         ],
         "serverCount": 1,
-        "speed": 25,
-        "storage": 1000
+        "speed": 25
     },
     {
         "id": 2,
         "protocolName": "polkadot",
         "cpuCores": 4,
         "ram": 16,
+        "storage": 1000,
         "os": [
             {
                 "osName": "mac",
@@ -38,14 +39,14 @@
             }
         ],
         "serverCount": 1,
-        "speed": 62.5,
-        "storage": 1000
+        "speed": 62.5
     },
     {
         "id": 3,
         "protocolName": "avalanche",
         "cpuCores": 4,
         "ram": 16,
+        "storage": 1000,
         "os": [
             {
                 "osName": "mac",
@@ -57,14 +58,14 @@
             }
         ],
         "serverCount": 1,
-        "speed": 25,
-        "storage": 1000
+        "speed": 25
     },
     {
         "id": 4,
         "protocolName": "near",
         "cpuCores": 8,
         "ram": 24,
+        "storage": 500,
         "os": [
             {
                 "osName": "windows",
@@ -80,14 +81,14 @@
             }
         ],
         "serverCount": 1,
-        "speed": "any",
-        "storage": 500
+        "speed": 0
     },
     {
         "id": 5,
         "protocolName": "cosmos",
         "cpuCores": 2,
         "ram": 32,
+        "storage": 500,
         "os": [
             {
                 "osName": "windows",
@@ -103,14 +104,14 @@
             }
         ],
         "serverCount": 1,
-        "speed": "any",
-        "storage": 500
+        "speed": 0
     },
     {
         "id": 6,
         "protocolName": "cardano",
         "cpuCores": 2,
         "ram": 16,
+        "storage": 100,
         "os": [
             {
                 "osName": "linux",
@@ -118,7 +119,6 @@
             }
         ],
         "serverCount": 2,
-        "speed": "any",
-        "storage": 100
+        "speed": 0
     }
 ]
