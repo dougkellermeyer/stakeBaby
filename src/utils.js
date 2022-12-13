@@ -16,25 +16,19 @@ export const matchProtocol = (userSpec) => {
     //for speed use the similar logic as above (return all protocols that are <= user uploaded speed AND "any")
 
     let userOs = userSpec.os;
-    console.log(userOs);
-
     let osMatches = []; 
 
     //cycle through the spec and find all the matches for os by exact string match
 
     for (let i = 0; i < protocolSpecJson.length; i++) {
         const protocolObjectOs = protocolSpecJson[i].os;
-        //grab the os part of the spec
-        console.log("protocolSpecOs", protocolObjectOs)
         for (let j = 0; j < protocolObjectOs.length; j++) {
             const osObj = protocolObjectOs[j];
             if(osObj.osName === userOs){
-                //push index of match
-                osMatches.push(protocolSpecJson[i].protocolName)
-                console.log("match")
+                osMatches.push(protocolSpecJson[i])
             }
         }
     }
-   console.log(osMatches)
+   return osMatches;
 };
 

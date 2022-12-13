@@ -11,12 +11,18 @@ function App() {
     os: "",
     serverCount: "",
     speed: ""
-  })
+  });
+
+  const [matches, setMatches] = useState([]);
+
   const sumbitSpecs = (e) => {
     console.log(spec);
-    matchProtocol(spec)
+    setMatches(matchProtocol(spec))
     e.preventDefault();
   }
+
+  console.log(matches);
+
   //TODO make generic handler that is dynamic to setState/spec
   const handleCpuCoresChange = (e) => {
     setSpec({
@@ -70,7 +76,12 @@ function App() {
         <p>Input your computer's specs or choose a protocol to view your optimal staking setup.
         </p>
       </header>
-    {/* TODO Move form into component and control its state here*/}
+      {/* TODO Move form into component and control its state here*/}
+      <div className='matches-wrapper'>
+        {matches.length > 0 ?
+          <p>Matches: {matches.map(match=>match.protocolName + " ")}</p> : null
+        }
+      </div>
       <div className="spec-selectors-wrapper">
         <form onSubmit={sumbitSpecs} className="spec-selectors-form">
           <div className="spec-select-child-wrapper">
