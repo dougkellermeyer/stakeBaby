@@ -14,10 +14,12 @@ function App() {
   });
 
   const [matches, setMatches] = useState([]);
+  const [misses, setMisses] = useState([]);
 
   const sumbitSpecs = (e) => {
     console.log(spec);
-    setMatches(matchProtocol(spec))
+    setMatches(matchProtocol(spec).matches)
+    setMisses(matchProtocol(spec).misses)
     e.preventDefault();
   }
 
@@ -79,7 +81,47 @@ function App() {
       {/* TODO Move form into component and control its state here*/}
       <div className='matches-wrapper'>
         {matches.length > 0 ?
-          <p>Matches: {matches.map(match=>match.protocolName + " ")}</p> : null
+          <div className='matches-subwrapper'>
+            <p><b>Matches</b> </p>
+            {matches.map(match =>
+              <div className='matches-detail-wrapper'>
+                <p className='matches-name'>
+                  {match.protocolName}
+                </p>
+                <ul className='matches-ul'>
+                  <li>
+                    <span>&#10003;</span>
+                    CPU: {match.cpuCores}
+                  </li>
+                  <li>
+                    <span>&#10003;</span>
+                    RAM: {match.ram}
+                  </li>
+                  <li>
+                    <span>&#10003;</span>
+                    Storage: {match.storage}
+                  </li>
+                  <li>
+                    <span>&#10003;</span>
+                    Operating System: {spec.os}
+                  </li>
+                  <li>
+                  <span>&#10003;</span>
+                    Internet Speed: {spec.speed} (min {match.speed})
+                  </li>
+                </ul>
+              </div>
+            )}
+          </div>
+          : null
+        }
+      </div>
+      <div className='misses-wrapper'>
+        {misses.length > 0 ?
+          <div className='misses-subwrapper'>
+            <p>Misses: {misses.map(match => match.protocolName + " ")}</p>
+          </div>
+          : null
         }
       </div>
       <div className="spec-selectors-wrapper">

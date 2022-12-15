@@ -10,6 +10,9 @@ export const matchProtocol = (userSpec) => {
 
     let userOs = userSpec.os;
     let osMatches = [];
+    let misses = [];
+
+    let allMatches = {};
 
     for (let i = 0; i < protocolSpecJson.length; i++) {
         const protocolObjectOs = protocolSpecJson[i].os;
@@ -30,7 +33,6 @@ export const matchProtocol = (userSpec) => {
     let userRam = userSpec.ram;
     let userRamMatches = protocolSpecJson.filter(protocol => userRam >= protocol.ram);
     let userRamMisses = protocolSpecJson.filter(protocol => userRam < protocol.ram);
-    console.log("ram matches", userRamMatches);
     console.log("ram misses", userRamMisses);
 
     let userStorage = userSpec.storage;
@@ -49,12 +51,17 @@ export const matchProtocol = (userSpec) => {
 
     //cycle through the spec and find all the matches for os by exact string match
 
-    //TODO write reduce function to combine matches and return to App.js
+    //TODO write reduce function to combine and return all matches
 
+    allMatches.matches = osMatches;
+    allMatches.misses = misses;
+    console.log(allMatches)
+
+    //--> a match meets ALL spec requirements, a "miss" means you're missing at least one requirement
+    //--> perhaps return the 
     //TODO write missing spec message for each spec ("you need 8 more GBs of RAM to run this protocol")
-    
 
-    return osMatches;
+    return allMatches;
 
 };
 

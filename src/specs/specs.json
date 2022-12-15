@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "protocolName": "ethereum",
+        "protocolName": "Ethereum",
         "cpuCores": 4,
         "ram": 16,
         "storage": 1000,
@@ -24,7 +24,7 @@
     },
     {
         "id": 2,
-        "protocolName": "polkadot",
+        "protocolName": "Polkadot",
         "cpuCores": 4,
         "ram": 16,
         "storage": 1000,
@@ -43,7 +43,7 @@
     },
     {
         "id": 3,
-        "protocolName": "avalanche",
+        "protocolName": "Avalanche",
         "cpuCores": 4,
         "ram": 16,
         "storage": 1000,
@@ -62,7 +62,7 @@
     },
     {
         "id": 4,
-        "protocolName": "near",
+        "protocolName": "Near",
         "cpuCores": 8,
         "ram": 24,
         "storage": 500,
@@ -85,7 +85,7 @@
     },
     {
         "id": 5,
-        "protocolName": "cosmos",
+        "protocolName": "Cosmos",
         "cpuCores": 2,
         "ram": 32,
         "storage": 500,
@@ -108,7 +108,7 @@
     },
     {
         "id": 6,
-        "protocolName": "cardano",
+        "protocolName": "Cardano",
         "cpuCores": 2,
         "ram": 16,
         "storage": 100,

@@ -53,6 +53,32 @@
   margin: -50px 0 50px 0;
 }
 
+.matches-subwrapper {
+  border: 1px solid green;
+}
+
+.misses-wrapper {
+  color: white;
+  margin: -50px 0 50px 0;
+}
+
+.misses-subwrapper {
+  border: 1px solid red;
+}
+
+.matches-detail-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.matches-detail-wrapper li{
+  text-align: left;
+}
+
+.matches-ul {
+  list-style: none;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
